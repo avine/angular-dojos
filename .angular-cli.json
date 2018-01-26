@@ -5,8 +5,8 @@
   },
   "apps": [
     {
-      "name": "demo",
-      "main": "app/demo/main.ts",
+      "name": "_tmpl",
+      "main": "app/_tmpl/main.ts",
       "root": "src",
       "outDir": "dist",
       "assets": [
@@ -30,8 +30,8 @@
       }
     },
     {
-      "name": "tmpl",
-      "main": "app/tmpl/main.ts",
+      "name": "demo",
+      "main": "app/demo/main.ts",
       "root": "src",
       "outDir": "dist",
       "assets": [

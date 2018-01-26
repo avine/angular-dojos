@@ -15,8 +15,8 @@ if (!appName) {
 const appsList = fs.readdirSync('src/app/');
 
 // template app mandatory
-if (!appsList.includes('tmpl')) {
-  console.error(`Error: template app "tmpl" is missing.`);
+if (!appsList.includes('_tmpl')) {
+  console.error(`Error: template app "_tmpl" is missing.`);
   process.exit(1);
 }
 
@@ -27,7 +27,7 @@ if (appsList.includes(appName)) {
 }
 
 try {
-  DEMO_MODE || fs.copySync('src/app/tmpl', `src/app/${appName}`);
+  DEMO_MODE || fs.copySync('src/app/_tmpl', `src/app/${appName}`);
   console.log(`Created folder: src/app/${appName}`);
 } catch (e) {
   console.error(e.message);
@@ -35,9 +35,9 @@ try {
 }
 
 try {
-  // Get "tmpl" app configuration
+  // Get "_tmpl" app configuration
   const config = JSON.parse(fs.readFileSync('.angular-cli.json', 'utf8'));
-  const tmplConfig = config.apps.filter(app => app.name === 'tmpl')[0];
+  const tmplConfig = config.apps.filter(app => app.name === '_tmpl')[0];
 
   // Clean configuration (when `app.name` has been removed from `src/app` folder)
   config.apps = config.apps.filter(app => appsList.includes(app.name));
