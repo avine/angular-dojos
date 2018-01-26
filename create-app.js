@@ -1,8 +1,10 @@
+#! /usr/bin/env node
+
 const fs = require('fs-extra');
 
 const DEMO_MODE = false;
 
-// Invoke this script using `node src/create-app [APP_NAME]`
+// Invoke this script using `node create-app [APP_NAME]` (same as invoking directly `./create-app.js [APP_NAME]`)
 let appName = process.argv[2];
 appName = appName.toLowerCase();
 
